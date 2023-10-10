@@ -75,7 +75,7 @@ git add .
 git commit -m “Add IAM role to Terraform module/aws_humangov_infrastructure/resources.tf”
 ```
 
-At this point the push command will fail since we turned off Cloud9 Credentials earlier. we will save these steps for later when must have finished our configurations. 
+At this point, the push command will fail since we turned off Cloud9 Credentials earlier. we will save these steps for later when must have finished our configurations. 
 
 ## Part 2 
 ## Deploying application in created infrastructure using Ansible.
@@ -121,10 +121,11 @@ The second was to dynamically add the environment variable values about the EC2 
 
 ### dynamically add environment variable values to the ansible hosts file in the default location
 
-`provisioner “local-exec” {
+```bash
+provisioner “local-exec” {
 command = “echo ${var.state_name} id=${self.id} ansible_host=${self.private_ip} ansible_user=ubuntu us_state=${var.state_name} aws_region=${var.region} aws_s3_bucket=${aws_s3_bucket.state_s3.bucket} aws_dynamodb_table=${aws_dynamodb_table.state_dynamodb.name} >> /etc/ansible/hosts”
 }
-`
+```
 
 For the interpolated value `${var.region}` above I added that variable to my `human-gov-infrastructure/terraform/modules/aws_humangov_infrastructure/variable.tf file`.
 
