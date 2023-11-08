@@ -1,4 +1,4 @@
-## Configuration and Deployment of HumanGov SaaS Application on AWS EC2 Inventory Across US States Using Ansible Securely Storing Configuration Files on AWS Code Commit.
+## Configuration and Deployment of a SaaS Application on AWS EC2 Inventory Across US States Using Ansible.
 ![!\[Alt text\](images/image000.png)](images/inage00.drawio.png)
 # Project description 
 
